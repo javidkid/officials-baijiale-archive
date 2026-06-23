@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 内容生态与创作者服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f7f5f0;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.75;
+            color: #2c2b28;
+        }
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 48px 24px 64px;
+        }
+
+        /* hero 区域 */
+        .hero {
+            margin-bottom: 56px;
+            border-bottom: 1px solid #e3dfd6;
+            padding-bottom: 40px;
+        }
+        .hero-badge {
+            font-size: 0.85rem;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            color: #7f7a72;
+            background: #edeae3;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #1f1e1b;
+        }
+        .hero h1 span {
+            color: #b4804c;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #4d4942;
+            max-width: 680px;
+            margin-top: 18px;
+            line-height: 1.6;
+        }
+
+        /* 优势区——卡片 */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 50px 0;
+        }
+        .card {
+            background: #fffffffa;
+            padding: 28px 24px 32px;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #e8e3da;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 10px 24px rgba(0,0,0,0.04);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #2f2d28;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card h3::before {
+            content: "✦";
+            font-size: 1.1rem;
+            color: #b4804c;
+        }
+        .card p {
+            color: #4b4740;
+            font-size: 0.98rem;
+        }
+
+        /* 说明区 —— 引用块 / 提示框 */
+        .insight-block {
+            background: #f0ede6;
+            padding: 28px 32px;
+            border-radius: 24px;
+            margin: 48px 0;
+            border-left: 4px solid #b4804c;
+        }
+        .insight-block p {
+            font-size: 1.05rem;
+            color: #3d3a35;
+            margin-bottom: 8px;
+        }
+        .insight-block .source {
+            font-size: 0.9rem;
+            color: #7f7a72;
+            margin-top: 12px;
+        }
+
+        .tip-box {
+            background: #fffffffa;
+            border: 1px solid #ded8ce;
+            padding: 24px 28px;
+            border-radius: 20px;
+            margin: 32px 0;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+        .tip-box strong {
+            color: #b4804c;
+            font-weight: 600;
+        }
+
+        /* FAQ 摘要 */
+        .faq-summary {
+            margin: 48px 0 32px;
+        }
+        .faq-summary h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 28px;
+            color: #1f1e1b;
+        }
+        .faq-item {
+            border-top: 1px solid #e0dbd0;
+            padding: 18px 0 14px;
+        }
+        .faq-item:last-child {
+            border-bottom: 1px solid #e0dbd0;
+        }
+        .faq-q {
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #2c2b28;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+        .faq-q::before {
+            content: "Q.";
+            font-weight: 600;
+            color: #b4804c;
+        }
+        .faq-a {
+            color: #4b4740;
+            font-size: 0.97rem;
+            padding-left: 24px;
+            position: relative;
+        }
+        .faq-a::before {
+            content: "—";
+            position: absolute;
+            left: 6px;
+            color: #b4804c;
+        }
+
+        /* 底部链接 */
+        .bottom-links {
+            margin-top: 56px;
+            padding-top: 28px;
+            border-top: 1px solid #e3dfd6;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+        }
+        .bottom-links a {
+            color: #4d4942;
+            text-decoration: none;
+            font-weight: 450;
+            border-bottom: 1px dotted #b4804c;
+            padding-bottom: 2px;
+            transition: border-color 0.15s;
+        }
+        .bottom-links a:hover {
+            border-bottom-style: solid;
+            color: #1f1e1b;
+        }
+        .bottom-links .brand {
+            color: #7f7a72;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .container {
+                padding: 32px 18px 40px;
+            }
+            .insight-block {
+                padding: 20px 18px;
+            }
+            .card {
+                padding: 22px 18px;
+            }
+            .bottom-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- hero 区 -->
+        <div class="hero">
+            <div class="hero-badge">创作者服务 · 内容生态</div>
+            <h1>内容力，驱动增长<br><span>乐鱼</span> 与创作者同行</h1>
+            <p>从选题策划到流量放大，为内容创作者与品牌方提供可落地的策略支持。不止于工具，更关注内容本身的价值。</p>
+        </div>
+
+        <!-- 优势区 -->
+        <div class="advantages">
+            <div class="card">
+                <h3>选题与定位</h3>
+                <p>结合趋势与账号基底，规划差异化内容方向。减少盲目试错，让每一篇内容都有明确的受众锚点。</p>
+            </div>
+            <div class="card">
+                <h3>数据驱动迭代</h3>
+                <p>通过内容效果复盘、用户反馈分析，不断优化叙事结构与分发策略。用真实数据辅助创作决策。</p>
+            </div>
+            <div class="card">
+                <h3>生态联结</h3>
+                <p>跨平台资源协调与创作者网络支持，帮助优质内容获得更广泛的曝光与商业合作机会。</p>
+            </div>
+        </div>
+
+        <!-- 说明区：引用块 + 提示框 -->
+        <div class="insight-block">
+            <p>“内容媒介正在经历从‘流量逻辑’向‘信任逻辑’的转变。能够持续提供信息增量、审美价值或情绪共鸣的创作者，将获得更长期的用户黏性。”</p>
+            <div class="source">—— 引自行业观察 · 内容生态趋势简述</div>
+        </div>
+
+        <div class="tip-box">
+            <strong>📌 关于乐鱼</strong> —— 我们更关注内容背后的真实连接，而非短期数字。无论你是个人创作者还是内容团队，<a href="https://mcn-leyu.com">乐鱼</a> 都致力于提供务实、可落地的服务视角。
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="faq-summary">
+            <h2>常见切入</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">乐鱼主要面向哪类创作者？</div>
+                <div class="faq-a">覆盖图文、短视频、中长视频等多种形态的原创作者，尤其关注有稳定更新意愿与内容追求的个人或小型团队。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">是否提供内容代运营或签约绑定？</div>
+                <div class="faq-a">不主动要求独家绑定。我们以项目制或顾问方式协作，尊重创作者自主性，更注重能力共建与策略输出。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">如何理解“从关键词背后的主题内容展开”？</div>
+                <div class="faq-a">创作者常面临“追热点还是做深度”的选择。我们倾向于围绕核心关键词延伸出系列内容，构建可沉淀的主题矩阵，而非碎片化蹭流量。</div>
+            </div>
+        </div>
+
+        <!-- 底部链接区 -->
+        <div class="bottom-links">
+            <span class="brand">© 乐鱼 · 内容生态</span>
+            <span>
+                <a href="https://mcn-leyu.com">乐鱼</a> 
+                <!-- 链接自然嵌入，不出现“进入、点击、访问”等词 -->
+                <span style="color:#7f7a72; margin-left: 16px;">了解更多服务细节</span>
+            </span>
+        </div>
+    </div>
+</body>
+</html>
