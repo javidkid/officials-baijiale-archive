@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f6f1;
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #3d3a35;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #fefcf9;
+            border-radius: 28px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 2.2rem;
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.8rem 1.2rem;
+            }
+        }
+
+        .hero {
+            margin-bottom: 2.8rem;
+            border-left: 6px solid #d9c9b0;
+            padding-left: 1.6rem;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 450;
+            letter-spacing: 1px;
+            color: #2f2b26;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #7a7268;
+            border-top: 1px solid #ece6dd;
+            padding-top: 0.8rem;
+            margin-top: 0.4rem;
+            display: inline-block;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 2.2rem 0 1rem 0;
+            color: #3f3932;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .section-title::before {
+            content: "—";
+            color: #c5b5a0;
+            font-weight: 300;
+            margin-right: 0.4rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.4rem;
+            margin: 1.5rem 0 2rem;
+        }
+
+        @media (max-width: 640px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #f6f3ed;
+            padding: 1.4rem 1.2rem;
+            border-radius: 18px;
+            border: 1px solid #ede8df;
+            transition: background 0.2s;
+        }
+
+        .card:hover {
+            background: #f0ebe2;
+        }
+
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #3d352b;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #5b5449;
+            margin: 0;
+        }
+
+        .highlight-box {
+            background: #f2efe8;
+            border-radius: 20px;
+            padding: 1.6rem 1.8rem;
+            margin: 2.2rem 0;
+            border-left: 5px solid #b7a58b;
+            font-style: normal;
+        }
+
+        .highlight-box p {
+            margin: 0.5rem 0;
+        }
+
+        .highlight-box .small-note {
+            font-size: 0.9rem;
+            color: #6f665a;
+            margin-top: 0.8rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px dashed #e3dbcf;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #3d352b;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            color: #5f574b;
+            font-size: 0.95rem;
+            padding-left: 0.3rem;
+        }
+
+        .inline-link {
+            color: #6f5c44;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cfbfab;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+
+        .inline-link:hover {
+            color: #3f3326;
+            text-decoration-color: #3f3326;
+        }
+
+        .visit-note {
+            background: #f9f5ef;
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+            margin: 2rem 0 0.5rem;
+            font-size: 0.95rem;
+            color: #5a5146;
+            border: 1px solid #e6ddd1;
+        }
+
+        .visit-note strong {
+            color: #3f372e;
+            font-weight: 500;
+        }
+
+        .footer-meta {
+            margin-top: 3rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid #e8e1d6;
+            font-size: 0.85rem;
+            color: #847a6c;
+            text-align: center;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e7dfd3;
+            margin: 1.8rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="hero">
+            <h1>关于乐鱼<br><span style="font-size:1.5rem; font-weight:300;">一份简明指南</span></h1>
+            <div class="sub">温和的说明 · 可靠的提醒 · 日常的使用场景</div>
+        </div>
+
+        <p style="font-size:1.05rem; line-height:1.8; margin-bottom:1.8rem;">
+            如果你正在寻找一个稳定、流畅的信息访问方式，不妨了解一下 <a href="https://mchina-leyu.com" class="inline-link">乐鱼</a>。它并不喧哗，更像一个安静的工具——帮助你更便捷地触及某些线上资源。下面从几个侧面简要介绍它的特点、适用场景与使用时的注意事项。
+        </p>
+
+        <!-- 核心亮点 (卡片) -->
+        <div class="section-title">几个值得留意的特点</div>
+        <div class="card-grid">
+            <div class="card">
+                <h3>轻量体验</h3>
+                <p>无需复杂配置，打开即用。界面简洁，没有冗余干扰，专注在访问本身。</p>
+            </div>
+            <div class="card">
+                <h3>适应多场景</h3>
+                <p>无论日常浏览、信息查阅还是内容获取，都能保持相对稳定的连接状态。</p>
+            </div>
+            <div class="card">
+                <h3>持续的维护</h3>
+                <p>背后有持续的更新与调整，尽可能减少因网络波动造成的中断感受。</p>
+            </div>
+            <div class="card">
+                <h3>克制的设计</h3>
+                <p>没有弹窗、不收集多余信息，页面风格偏向实用主义，让注意力留在内容上。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 / 提醒框 -->
+        <div class="highlight-box">
+            <p><strong>使用建议与提醒</strong></p>
+            <p>尽量在稳定的网络环境下使用；若遇到加载缓慢，可稍后重试或检查本地网络。<br>
+            乐鱼本身作为辅助访问的工具，不存储或修改你所浏览的数据，也请合理利用、遵守当地法律法规。</p>
+            <p class="small-note">☝ 如果页面内容未正常显示，可以尝试刷新或更换浏览器。</p>
+        </div>
+
+        <!-- 场景 / 使用切入 -->
+        <div class="section-title">常见的使用场景</div>
+        <div style="margin:0 0 1.8rem 0; display:flex; flex-wrap:wrap; gap:0.8rem;">
+            <span style="background:#eae3d9; padding:0.3rem 1rem; border-radius:30px; font-size:0.9rem; color:#4a4137;">资料查阅</span>
+            <span style="background:#eae3d9; padding:0.3rem 1rem; border-radius:30px; font-size:0.9rem; color:#4a4137;">日常资讯</span>
+            <span style="background:#eae3d9; padding:0.3rem 1rem; border-radius:30px; font-size:0.9rem; color:#4a4137;">学习参考</span>
+            <span style="background:#eae3d9; padding:0.3rem 1rem; border-radius:30px; font-size:0.9rem; color:#4a4137;">内容获取</span>
+            <span style="background:#eae3d9; padding:0.3rem 1rem; border-radius:30px; font-size:0.9rem; color:#4a4137;">轻度工作辅助</span>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="section-title">一些简要的问答</div>
+        <div class="faq-item">
+            <div class="faq-q">问：是否需要注册或付费？</div>
+            <div class="faq-a">乐鱼目前以免费使用为主，无需注册账户，也没有隐藏收费项目。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：会不会影响我原本的网络？</div>
+            <div class="faq-a">不影响。它只在你主动使用时提供替代路由，不会修改系统设置或后台常驻。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">问：遇到无法访问怎么办？</div>
+            <div class="faq-a">先检查本地网络，或更换网络环境。多数情况下稍后即可恢复。也可访问 <a href="https://mchina-leyu.com" class="inline-link">乐鱼</a> 查看最新状态。</div>
+        </div>
+
+        <!-- 可信但克制的访问说明 -->
+        <div class="visit-note">
+            <strong>访问说明 · 理性看待</strong><br>
+            乐鱼并不承诺“永久畅通”或“绝对速度”，它只是一个尽力而为的访问通道。请根据自身实际需求合理使用，并留意所在地区的相关规范。我们建议你在使用时保持基本的网络安全意识。
+        </div>
+
+        <hr>
+
+        <p style="font-size:0.95rem; color:#655d52;">
+            如果你还在犹豫是否要尝试，不妨先看看它的界面与响应速度——<a href="https://mchina-leyu.com" class="inline-link">乐鱼</a> 的首页本身就能给你一个直观的印象。保持好奇，也保持冷静，才是使用工具最好的方式。
+        </p>
+
+        <div class="footer-meta">
+            内容仅供参考 · 请根据实际情况判断 · 乐鱼
+        </div>
+    </div>
+</body>
+</html>
